@@ -1,0 +1,54 @@
+2025-05-05 23:12:18,570 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:12:20,790 WARNING: Erro ao sincronizar timestamp: unsupported operand type(s) for -: 'str' and 'int'
+2025-05-05 23:12:22,296 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:12:22,296 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:12:23,140 INFO: Saldo USDT: 1942.72120055
+2025-05-05 23:12:24,546 INFO: Posições ativas: {'ETH/USDT:USDT': 1.0, 'UNI/USDT:USDT': 3.0}
+2025-05-05 23:12:24,832 INFO: Timestamp do servidor: 1746497558322
+2025-05-05 23:12:24,832 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:12:24,861 INFO: Nenhuma ordem aberta
+2025-05-05 23:12:24,861 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:12:24,861 INFO: Realizando trade de teste em BTC/USDT
+2025-05-05 23:12:25,158 INFO: Enviando ordem de teste - Symbol: BTC/USDT - Side: buy - Quantidade: 0.001
+2025-05-05 23:12:25,464 ERROR: Erro ao enviar ordem para BTC/USDT: binanceusdm {"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2025-05-05 23:12:25,765 ERROR: Traceback (most recent call last):
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 577, in fetch
+    response.raise_for_status()
+  File "D:\smc-project\venv\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\smc-project\dryrun\binance_futures_testnet.py", line 166, in send_order
+    order = self.exchange.create_market_order(symbol, side, quantity, params=params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 5475, in create_market_order
+    return self.create_order(symbol, 'market', side, amount, price, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 6016, in create_order
+    response = self.fapiPrivatePostOrder(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\types.py", line 35, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11330, in request
+    response = self.fetch2(path, api, method, params, headers, body, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4397, in fetch2
+    raise e
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4386, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 593, in fetch
+    skip_further_error_handling = self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11297, in handle_errors
+    self.throw_exactly_matched_exception(self.get_exceptions_by_url(url, 'exact'), error, feedback)
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4790, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.InvalidOrder: binanceusdm {"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+
+2025-05-05 23:12:25,770 ERROR: Falha ao enviar ordem de teste
+2025-05-05 23:12:25,771 ERROR: Teste de trade falhou.

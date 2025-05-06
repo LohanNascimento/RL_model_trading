@@ -1,0 +1,16 @@
+{
+  "asset": "DOGE",
+  "quote": "USDT",
+  "exchange": "binance",
+  "timeframe": "1h",
+  "start_date": "2022-01-01",
+  "end_date": "2025-05-04",
+  "validated": true,
+  "data_hash": "c4fd438cede8a09f1f6eda633088c18e",
+  "rows": 29282,
+  "date_range": [
+    "2022-01-01",
+    "2025-05-05"
+  ],
+  "download_time": "2025-05-04 23:08:17"
+}

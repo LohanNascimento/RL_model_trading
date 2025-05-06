@@ -1,0 +1,209 @@
+
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Relatório de Desempenho do Modelo</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background-color: #f8f9fa;
+                    color: #343a40;
+                    padding-top: 20px;
+                }
+                .header {
+                    background: linear-gradient(135deg, #3498db, #9b59b6);
+                    color: white;
+                    padding: 30px 20px;
+                    border-radius: 10px;
+                    margin-bottom: 30px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                .card {
+                    border-radius: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                    margin-bottom: 20px;
+                    transition: transform 0.3s;
+                }
+                .card:hover {
+                    transform: translateY(-5px);
+                }
+                .card-header {
+                    font-weight: bold;
+                    background-color: #f1f3f5;
+                }
+                .metric-value {
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+                .metric-label {
+                    color: #6c757d;
+                    font-size: 14px;
+                }
+                .positive {
+                    color: #28a745;
+                }
+                .negative {
+                    color: #dc3545;
+                }
+                .image-container {
+                    background-color: white;
+                    padding: 15px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                }
+                .footer {
+                    margin-top: 30px;
+                    text-align: center;
+                    color: #6c757d;
+                    font-size: 14px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header text-center">
+                    <h1>Relatório de Desempenho do Modelo</h1>
+                    <p class="lead">Análise Completa de Trading</p>
+                    <p class="small">Gerado em: 05/05/2025 21:24</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Resumo Financeiro</div>
+                            <div class="card-body">
+                                <div class="row text-center">
+                                    <div class="col-6 mb-3">
+                                        <div class="metric-value negative">-92.86</div>
+                                        <div class="metric-label">Lucro Total</div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="metric-value negative">-0.02</div>
+                                        <div class="metric-label">PNL Médio</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="metric-value">72.31</div>
+                                        <div class="metric-label">Max Drawdown</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="metric-value" style="color: #e74c3c">-0.46</div>
+                                        <div class="metric-label">Sharpe Ratio</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Estatísticas dos Trades</div>
+                            <div class="card-body">
+                                <div class="row text-center">
+                                    <div class="col-6 mb-3">
+                                        <div class="metric-value">4938</div>
+                                        <div class="metric-label">Total de Trades</div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="metric-value" style="color: #e74c3c">24.42%</div>
+                                        <div class="metric-label">Taxa de Acerto</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="metric-value positive">2.66</div>
+                                        <div class="metric-label">PNL Médio Ganhos</div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="metric-value negative">-2.63</div>
+                                        <div class="metric-label">PNL Médio Perdas</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">Detalhes dos Trades</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Trades Ganhos:</span>
+                                                <span class="fw-bold">1206</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 24.4228432563791%" 
+                                                     aria-valuenow="24.4228432563791" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Trades Perdidos:</span>
+                                                <span class="fw-bold">1257</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 75.5771567436209%" 
+                                                     aria-valuenow="75.5771567436209" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-2">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Profit Factor:</span>
+                                                <span class="fw-bold negative">0.97</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Razão Ganho/Perda:</span>
+                                                <span class="fw-bold">1.01</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">Evolução do Saldo</div>
+                            <div class="card-body">
+                                <div class="image-container text-center">
+                                    <img src="saldo_evolucao.png" class="img-fluid" alt="Evolução do Saldo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">Distribuição de PNL</div>
+                            <div class="card-body">
+                                <div class="image-container text-center">
+                                    <img src="distribuicao_pnl.png" class="img-fluid" alt="Distribuição de PNL">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <p>© 2025 - Relatório de Trading Automatizado</p>
+                </div>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        </html>
+        

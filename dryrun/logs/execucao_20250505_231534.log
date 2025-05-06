@@ -1,0 +1,26 @@
+2025-05-05 23:15:34,695 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:15:36,937 INFO: Timestamp sincronizado. Diferença: 13495ms
+2025-05-05 23:15:38,460 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:15:38,461 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:15:39,270 INFO: Saldo USDT: 1940.44717709
+2025-05-05 23:15:40,161 INFO: Posições ativas: {'ETH/USDT:USDT': 1.0, 'UNI/USDT:USDT': 3.0}
+2025-05-05 23:15:40,439 INFO: Timestamp do servidor: 1746497753934
+2025-05-05 23:15:40,463 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:15:40,476 INFO: Nenhuma ordem aberta
+2025-05-05 23:15:40,476 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:15:40,476 INFO: Monitorando os seguintes ativos: ['BTCUSDT']
+2025-05-05 23:15:41,563 INFO: Timestamp sincronizado. Diferença: 13495ms
+2025-05-05 23:15:43,073 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:15:43,136 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:15:43,209 INFO: Carregando modelo de checkpoints/best_model.zip
+2025-05-05 23:15:45,905 INFO: Modelo carregado com sucesso!
+2025-05-05 23:15:45,905 INFO: Sobrescrevendo símbolos para: ['BTC/USDT', 'ETH/USDT', 'DOT/USDT']
+2025-05-05 23:15:45,905 INFO: Modo de monitoramento apenas (sem execução de trades)
+2025-05-05 23:15:45,921 INFO: Executando apenas um ciclo
+2025-05-05 23:15:45,921 INFO: Analisando BTC/USDT...
+2025-05-05 23:15:51,588 ERROR: Erro ao predizer ação para BTC/USDT: Error: Unexpected observation shape (10, 14) for Box environment, please use (10, 12) or (n_env, 10, 12) for the observation shape.
+2025-05-05 23:15:51,588 INFO: Analisando ETH/USDT...
+2025-05-05 23:15:55,352 ERROR: Erro ao predizer ação para ETH/USDT: Error: Unexpected observation shape (10, 14) for Box environment, please use (10, 12) or (n_env, 10, 12) for the observation shape.
+2025-05-05 23:15:55,354 INFO: Analisando DOT/USDT...
+2025-05-05 23:15:59,171 ERROR: Erro ao predizer ação para DOT/USDT: Error: Unexpected observation shape (10, 14) for Box environment, please use (10, 12) or (n_env, 10, 12) for the observation shape.
+2025-05-05 23:16:00,893 INFO: Métricas registradas: Saldo=1940.65 | Posições abertas: 0

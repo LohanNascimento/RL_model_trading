@@ -1,0 +1,30 @@
+2025-05-05 23:16:50,978 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:16:53,155 INFO: Timestamp sincronizado. Diferença: 13479ms
+2025-05-05 23:16:54,653 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:16:54,668 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:16:54,969 INFO: Saldo USDT: 1940.22398178
+2025-05-05 23:16:56,134 INFO: Nenhuma posição ativa
+2025-05-05 23:16:56,446 INFO: Timestamp do servidor: 1746497829924
+2025-05-05 23:16:56,446 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:16:56,450 INFO: Nenhuma ordem aberta
+2025-05-05 23:16:56,450 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:16:56,455 INFO: Monitorando os seguintes ativos: ['BTCUSDT']
+2025-05-05 23:16:58,124 INFO: Timestamp sincronizado. Diferença: 13480ms
+2025-05-05 23:16:59,090 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:16:59,091 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:16:59,092 INFO: Carregando modelo de checkpoints/best_model.zip
+2025-05-05 23:17:01,528 INFO: Modelo carregado com sucesso!
+2025-05-05 23:17:01,528 INFO: Sobrescrevendo símbolos para: ['BTC/USDT', 'ETH/USDT']
+2025-05-05 23:17:01,528 INFO: Modo de monitoramento apenas (sem execução de trades)
+2025-05-05 23:17:01,528 INFO: Executando apenas um ciclo
+2025-05-05 23:17:01,528 INFO: Analisando BTC/USDT...
+2025-05-05 23:17:07,156 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:17:07,156 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:17:07,156 INFO: Observação preparada para BTC/USDT: shape (10, 12)
+2025-05-05 23:17:13,820 INFO: Decisão para BTC/USDT: COMPRAR (action=1) | Preço: 94209.110000 | Posição atual: 0
+2025-05-05 23:17:13,836 INFO: Analisando ETH/USDT...
+2025-05-05 23:17:18,015 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:17:18,015 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:17:18,017 INFO: Observação preparada para ETH/USDT: shape (10, 12)
+2025-05-05 23:17:22,952 INFO: Decisão para ETH/USDT: COMPRAR (action=1) | Preço: 1801.490000 | Posição atual: 0
+2025-05-05 23:17:24,367 INFO: Métricas registradas: Saldo=1940.22 | Posições abertas: 0

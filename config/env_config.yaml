@@ -1,0 +1,36 @@
+# Configuração do Ambiente de Trading
+environment:
+  window_size: 10      # Tamanho da janela de observação
+  initial_balance: 10000  # Saldo inicial
+  fee: 0.001          # Taxa de corretagem (0.1%)
+  symbols:           # Lista de símbolos para múltiplos ativos
+   - ETHUSDT
+   - BTCUSDT
+   - ADAUSDT
+   - UNIUSDT
+   - DOTUSDT
+   - AVAXUSDT
+   - DOGEUSDT
+   - SOLUSDT
+   - LINKUSDT
+  log_level: INFO    # Nível de log: DEBUG, INFO, WARNING, ERROR
+
+# Configuração de Observação
+observation:
+  features:
+    - close
+    - volume
+    - sma_14
+    - ema_14
+    - macd
+    - macd_signal
+    - std_14
+    - atr_14
+    - bb_upper
+    - bb_lower
+    - rsi_14
+    - stoch_k
+    - stoch_d
+    - roc_14
+  normalization: true  # Normalizar features entre -1 e 1
+  lookback: 10        # Período para cálculo de indicadores

@@ -1,0 +1,167 @@
+2025-05-05 23:32:45,824 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:32:47,732 INFO: Timestamp sincronizado. Diferença: 13486ms
+2025-05-05 23:32:49,227 INFO: Modo de posição atual: HEDGE
+2025-05-05 23:32:49,227 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:32:49,542 INFO: Saldo USDT: 1940.22398178
+2025-05-05 23:32:50,178 INFO: Nenhuma posição ativa
+2025-05-05 23:32:51,021 INFO: Timestamp do servidor: 1746498784510
+2025-05-05 23:32:51,021 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:32:51,022 INFO: Nenhuma ordem aberta
+2025-05-05 23:32:51,022 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:32:51,027 INFO: Monitorando os seguintes ativos: ['ETHUSDT', 'BTCUSDT', 'ADAUSDT', 'UNIUSDT', 'DOTUSDT', 'AVAXUSDT', 'DOGEUSDT', 'SOLUSDT', 'LINKUSDT']
+2025-05-05 23:32:52,911 INFO: Timestamp sincronizado. Diferença: 13489ms
+2025-05-05 23:32:54,412 INFO: Modo de posição atual: HEDGE
+2025-05-05 23:32:54,412 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:32:54,413 INFO: Carregando modelo de checkpoints/best_model.zip
+2025-05-05 23:32:59,491 INFO: Modelo carregado com sucesso!
+2025-05-05 23:32:59,491 INFO: Carregando modelo de checkpoints/best_model.zip
+2025-05-05 23:32:59,604 INFO: Modelo carregado com sucesso!
+2025-05-05 23:32:59,604 INFO: Sobrescrevendo símbolos para: ['BTC/USDT', 'ETH/USDT', 'DOT/USDT', 'ADA/USDT', 'SOL/USDT']
+2025-05-05 23:32:59,608 INFO: Iniciando loop de execução do modelo
+2025-05-05 23:32:59,609 INFO: Analisando BTC/USDT...
+2025-05-05 23:33:04,807 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:33:04,807 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:33:04,821 INFO: Observação preparada para BTC/USDT: shape (10, 12)
+2025-05-05 23:33:10,074 INFO: Decisão para BTC/USDT: COMPRAR (action=1) | Preço: 94215.990000 | Posição atual: 0
+2025-05-05 23:33:10,892 INFO: Parâmetros da ordem: Symbol=BTC/USDT | Ação=1 | Quantidade=0.001000 | Valor=94.22 USDT | Saldo=1940.22 USDT | Risco=2.0%
+2025-05-05 23:33:10,892 INFO: Enviando ordem de COMPRA para BTC/USDT - Qtd: 0.001000 - Preço: 94215.990000
+2025-05-05 23:33:11,879 INFO: Usando modo hedge com positionSide=LONG
+2025-05-05 23:33:12,175 ERROR: Erro ao enviar ordem para BTC/USDT: binanceusdm {"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2025-05-05 23:33:12,205 ERROR: Traceback (most recent call last):
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 577, in fetch
+    response.raise_for_status()
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\smc-project\dryrun\binance_futures_testnet.py", line 234, in send_order
+    order = self.exchange.create_market_order(symbol, side, quantity, params=params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 5475, in create_market_order
+    return self.create_order(symbol, 'market', side, amount, price, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 6016, in create_order
+    response = self.fapiPrivatePostOrder(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\types.py", line 35, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 11330, in request
+    response = self.fetch2(path, api, method, params, headers, body, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 4397, in fetch2
+    raise e
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 4386, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 593, in fetch
+    skip_further_error_handling = self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 11297, in handle_errors
+    self.throw_exactly_matched_exception(self.get_exceptions_by_url(url, 'exact'), error, feedback)
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 4790, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.InvalidOrder: binanceusdm {"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+
+2025-05-05 23:33:12,205 INFO: Ordem de compra enviada: None
+2025-05-05 23:33:12,205 INFO: Analisando ETH/USDT...
+2025-05-05 23:33:15,636 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:33:15,639 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:33:15,642 INFO: Observação preparada para ETH/USDT: shape (10, 12)
+2025-05-05 23:33:19,171 INFO: Decisão para ETH/USDT: COMPRAR (action=1) | Preço: 1799.330000 | Posição atual: 0
+2025-05-05 23:33:19,990 INFO: Parâmetros da ordem: Symbol=ETH/USDT | Ação=1 | Quantidade=0.056000 | Valor=100.76 USDT | Saldo=1940.22 USDT | Risco=2.0%
+2025-05-05 23:33:19,991 INFO: Enviando ordem de COMPRA para ETH/USDT - Qtd: 0.056000 - Preço: 1799.330000
+2025-05-05 23:33:21,488 INFO: Usando modo hedge com positionSide=LONG
+2025-05-05 23:33:21,787 INFO: Ordem enviada para ETH/USDT: buy 0.056 @ MARKET
+2025-05-05 23:33:21,787 INFO: Ordem de compra enviada: {'info': {'orderId': '1725979301', 'symbol': 'ETHUSDT', 'status': 'FILLED', 'clientOrderId': 'x-cvBPrNm967bf6f2a53552978f74243', 'price': '0.00', 'avgPrice': '1794.00000', 'origQty': '0.056', 'executedQty': '0.056', 'cumQty': '0.056', 'cumQuote': '100.46400', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'LONG', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': '0', 'updateTime': '1746498815283'}, 'id': '1725979301', 'clientOrderId': 'x-cvBPrNm967bf6f2a53552978f74243', 'timestamp': 1746498815283, 'datetime': '2025-05-06T02:33:35.283Z', 'lastTradeTimestamp': 1746498815283, 'lastUpdateTimestamp': 1746498815283, 'symbol': 'ETH/USDT:USDT', 'type': 'market', 'timeInForce': 'GTC', 'postOnly': False, 'reduceOnly': False, 'side': 'buy', 'price': 1794.0, 'triggerPrice': None, 'amount': 0.056, 'cost': 100.464, 'average': 1794.0, 'filled': 0.056, 'remaining': 0.0, 'status': 'closed', 'fee': None, 'trades': [], 'fees': [], 'stopPrice': None, 'takeProfitPrice': None, 'stopLossPrice': None}
+2025-05-05 23:33:21,787 INFO: Analisando DOT/USDT...
+2025-05-05 23:33:25,201 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:33:25,201 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:33:25,204 INFO: Observação preparada para DOT/USDT: shape (10, 12)
+2025-05-05 23:33:29,817 INFO: Decisão para DOT/USDT: VENDER (action=2) | Preço: 3.880000 | Posição atual: 0
+2025-05-05 23:33:30,113 INFO: Parâmetros da ordem: Symbol=DOT/USDT | Ação=2 | Quantidade=25.773000 | Valor=100.00 USDT | Saldo=1940.37 USDT | Risco=2.0%
+2025-05-05 23:33:30,113 INFO: Enviando ordem de VENDA para DOT/USDT - Qtd: 25.773000 - Preço: 3.880000
+2025-05-05 23:33:32,133 INFO: Usando modo hedge com positionSide=SHORT
+2025-05-05 23:33:32,428 INFO: Ordem enviada para DOT/USDT: sell 25.773 @ MARKET
+2025-05-05 23:33:32,429 INFO: Ordem de venda enviada: {'info': {'orderId': '65685506', 'symbol': 'DOTUSDT', 'status': 'FILLED', 'clientOrderId': 'x-cvBPrNm912e548d8b5fb9a973a37fe', 'price': '0.000', 'avgPrice': '3.9230', 'origQty': '25.7', 'executedQty': '25.7', 'cumQty': '25.7', 'cumQuote': '100.8211', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'SHORT', 'stopPrice': '0.000', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': '0', 'updateTime': '1746498825917'}, 'id': '65685506', 'clientOrderId': 'x-cvBPrNm912e548d8b5fb9a973a37fe', 'timestamp': 1746498825917, 'datetime': '2025-05-06T02:33:45.917Z', 'lastTradeTimestamp': 1746498825917, 'lastUpdateTimestamp': 1746498825917, 'symbol': 'DOT/USDT:USDT', 'type': 'market', 'timeInForce': 'GTC', 'postOnly': False, 'reduceOnly': False, 'side': 'sell', 'price': 3.923, 'triggerPrice': None, 'amount': 25.7, 'cost': 100.8211, 'average': 3.923, 'filled': 25.7, 'remaining': 0.0, 'status': 'closed', 'fee': None, 'trades': [], 'fees': [], 'stopPrice': None, 'takeProfitPrice': None, 'stopLossPrice': None}
+2025-05-05 23:33:32,430 INFO: Analisando ADA/USDT...
+2025-05-05 23:33:36,853 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:33:36,853 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:33:36,855 INFO: Observação preparada para ADA/USDT: shape (10, 12)
+2025-05-05 23:33:41,451 INFO: Decisão para ADA/USDT: VENDER (action=2) | Preço: 0.656100 | Posição atual: 0
+2025-05-05 23:33:41,743 INFO: Parâmetros da ordem: Symbol=ADA/USDT | Ação=2 | Quantidade=152.416000 | Valor=100.00 USDT | Saldo=1941.49 USDT | Risco=2.0%
+2025-05-05 23:33:41,746 INFO: Enviando ordem de VENDA para ADA/USDT - Qtd: 152.416000 - Preço: 0.656100
+2025-05-05 23:33:43,778 INFO: Usando modo hedge com positionSide=SHORT
+2025-05-05 23:33:44,075 ERROR: Erro ao enviar ordem para ADA/USDT: binanceusdm {"code":-4131,"msg":"The counterparty's best price does not meet the PERCENT_PRICE filter limit."}
+2025-05-05 23:33:44,078 ERROR: Traceback (most recent call last):
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 577, in fetch
+    response.raise_for_status()
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\smc-project\dryrun\binance_futures_testnet.py", line 234, in send_order
+    order = self.exchange.create_market_order(symbol, side, quantity, params=params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 5475, in create_market_order
+    return self.create_order(symbol, 'market', side, amount, price, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 6016, in create_order
+    response = self.fapiPrivatePostOrder(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\types.py", line 35, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 11330, in request
+    response = self.fetch2(path, api, method, params, headers, body, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 4397, in fetch2
+    raise e
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 4386, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 593, in fetch
+    skip_further_error_handling = self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 11297, in handle_errors
+    self.throw_exactly_matched_exception(self.get_exceptions_by_url(url, 'exact'), error, feedback)
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 4790, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.OperationRejected: binanceusdm {"code":-4131,"msg":"The counterparty's best price does not meet the PERCENT_PRICE filter limit."}
+
+2025-05-05 23:33:44,080 INFO: Ordem de venda enviada: None
+2025-05-05 23:33:44,080 INFO: Analisando SOL/USDT...
+2025-05-05 23:33:49,132 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:33:49,153 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:33:49,156 INFO: Observação preparada para SOL/USDT: shape (10, 12)
+2025-05-05 23:33:53,403 INFO: Decisão para SOL/USDT: VENDER (action=2) | Preço: 144.360000 | Posição atual: 0
+2025-05-05 23:33:53,693 INFO: Parâmetros da ordem: Symbol=SOL/USDT | Ação=2 | Quantidade=0.693000 | Valor=100.04 USDT | Saldo=1941.48 USDT | Risco=2.0%
+2025-05-05 23:33:53,693 INFO: Enviando ordem de VENDA para SOL/USDT - Qtd: 0.693000 - Preço: 144.360000
+2025-05-05 23:33:55,723 INFO: Usando modo hedge com positionSide=SHORT
+2025-05-05 23:33:55,724 ERROR: Erro ao enviar ordem para SOL/USDT: binanceusdm amount of SOL/USDT:USDT must be greater than minimum amount precision of 1
+2025-05-05 23:33:55,726 ERROR: Traceback (most recent call last):
+  File "D:\smc-project\dryrun\binance_futures_testnet.py", line 234, in send_order
+    order = self.exchange.create_market_order(symbol, side, quantity, params=params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 5475, in create_market_order
+    return self.create_order(symbol, 'market', side, amount, price, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 6000, in create_order
+    request = self.create_order_request(symbol, type, side, amount, price, params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\binance.py", line 6247, in create_order_request
+    request['quantity'] = self.amount_to_precision(symbol, amount)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lohan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\ccxt\base\exchange.py", line 5525, in amount_to_precision
+    raise InvalidOrder(self.id + ' amount of ' + market['symbol'] + ' must be greater than minimum amount precision of ' + self.number_to_string(market['precision']['amount']))
+ccxt.base.errors.InvalidOrder: binanceusdm amount of SOL/USDT:USDT must be greater than minimum amount precision of 1
+
+2025-05-05 23:33:55,727 INFO: Ordem de venda enviada: None
+2025-05-05 23:33:57,494 INFO: Métricas registradas: Saldo=1941.52 | Posições abertas: 0
+2025-05-05 23:33:57,495 INFO: Ciclo de verificação completo. Próxima verificação em 3600 segundos

@@ -1,0 +1,31 @@
+# Configuração de Backtesting
+backtest:
+  start_date: "2022-01-01"  # Data de início do backtest
+  end_date: "2024-01-01"    # Data de fim do backtest
+  initial_capital: 10000    # Capital inicial
+  position_size: 1.0        # Tamanho da posição (100% do capital)
+  slippage: 0.0005         # Slippage médio (0.05%)
+  max_drawdown: 0.20       # Drawdown máximo permitido (20%)
+  max_position: 10         # Número máximo de posições simultâneas
+
+# Métricas de Performance
+metrics:
+  - sharpe_ratio
+  - sortino_ratio
+  - max_drawdown
+  - win_rate
+  - average_profit
+  - average_loss
+  - profit_factor
+
+# Critérios de parada
+stop_criteria:
+  - max_drawdown: 0.10     # Drawdown máximo (10%)
+  - consecutive_losses: 10 # Máximo de perdas consecutivas
+  - profit_target: 100000  # Alvo de lucro
+
+# Configuração de logs
+logging:
+  level: INFO
+  file: "backtest.log"
+  format: "%(asctime)s - %(levelname)s - %(message)s"

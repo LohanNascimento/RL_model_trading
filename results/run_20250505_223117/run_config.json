@@ -1,0 +1,7 @@
+{
+  "mode": "backtest",
+  "symbol": "DOTUSDT",
+  "data_file": null,
+  "model_path": "checkpoints/best_model.zip",
+  "timestamp": "2025-05-05 22:32:54"
+}

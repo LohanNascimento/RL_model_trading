@@ -1,0 +1,165 @@
+2025-05-05 23:24:16,830 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:24:20,171 INFO: Timestamp sincronizado. Diferença: 13501ms
+2025-05-05 23:24:21,176 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:24:21,176 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:24:21,485 INFO: Saldo USDT: 1940.22398178
+2025-05-05 23:24:22,375 INFO: Nenhuma posição ativa
+2025-05-05 23:24:22,667 INFO: Timestamp do servidor: 1746498276165
+2025-05-05 23:24:22,667 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:24:22,682 INFO: Nenhuma ordem aberta
+2025-05-05 23:24:22,682 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:24:22,682 INFO: Monitorando os seguintes ativos: ['ETHUSDT', 'BTCUSDT', 'ADAUSDT', 'UNIUSDT', 'DOTUSDT', 'AVAXUSDT', 'DOGEUSDT', 'SOLUSDT', 'LINKUSDT']
+2025-05-05 23:24:24,551 INFO: Timestamp sincronizado. Diferença: 13489ms
+2025-05-05 23:24:26,042 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:24:26,043 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:24:26,043 INFO: Carregando modelo de checkpoints/best_model.zip
+2025-05-05 23:24:28,424 INFO: Modelo carregado com sucesso!
+2025-05-05 23:24:28,424 INFO: Sobrescrevendo símbolos para: ['BTC/USDT', 'ETH/USDT', 'DOT/USDT']
+2025-05-05 23:24:28,424 INFO: Iniciando loop de execução do modelo
+2025-05-05 23:24:28,424 INFO: Analisando BTC/USDT...
+2025-05-05 23:24:32,354 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:24:32,354 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:24:32,356 INFO: Observação preparada para BTC/USDT: shape (10, 12)
+2025-05-05 23:24:37,863 INFO: Decisão para BTC/USDT: COMPRAR (action=1) | Preço: 94106.410000 | Posição atual: 0
+2025-05-05 23:24:38,686 INFO: Parâmetros da ordem: Symbol=BTC/USDT | Ação=1 | Quantidade=0.001000 | Valor=94.11 USDT | Saldo=1940.22 USDT | Risco=2.0%
+2025-05-05 23:24:38,686 INFO: Enviando ordem de COMPRA para BTC/USDT - Qtd: 0.001000 - Preço: 94106.410000
+2025-05-05 23:24:39,506 ERROR: Erro ao enviar ordem para BTC/USDT: binanceusdm {"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2025-05-05 23:24:39,513 ERROR: Traceback (most recent call last):
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 577, in fetch
+    response.raise_for_status()
+  File "D:\smc-project\venv\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\smc-project\dryrun\binance_futures_testnet.py", line 189, in send_order
+    order = self.exchange.create_market_order(symbol, side, quantity, params=params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 5475, in create_market_order
+    return self.create_order(symbol, 'market', side, amount, price, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 6016, in create_order
+    response = self.fapiPrivatePostOrder(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\types.py", line 35, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11330, in request
+    response = self.fetch2(path, api, method, params, headers, body, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4397, in fetch2
+    raise e
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4386, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 593, in fetch
+    skip_further_error_handling = self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11297, in handle_errors
+    self.throw_exactly_matched_exception(self.get_exceptions_by_url(url, 'exact'), error, feedback)
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4790, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.InvalidOrder: binanceusdm {"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+
+2025-05-05 23:24:39,539 INFO: Ordem de compra enviada: None
+2025-05-05 23:24:39,539 INFO: Analisando ETH/USDT...
+2025-05-05 23:24:42,689 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:24:42,705 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:24:42,705 INFO: Observação preparada para ETH/USDT: shape (10, 12)
+2025-05-05 23:24:47,048 INFO: Decisão para ETH/USDT: COMPRAR (action=1) | Preço: 1796.530000 | Posição atual: 0
+2025-05-05 23:24:47,949 INFO: Parâmetros da ordem: Symbol=ETH/USDT | Ação=1 | Quantidade=0.056000 | Valor=100.61 USDT | Saldo=1940.22 USDT | Risco=2.0%
+2025-05-05 23:24:47,950 INFO: Enviando ordem de COMPRA para ETH/USDT - Qtd: 0.056000 - Preço: 1796.530000
+2025-05-05 23:24:48,263 ERROR: Erro ao enviar ordem para ETH/USDT: binanceusdm {"code":-4061,"msg":"Order's position side does not match user's setting."}
+2025-05-05 23:24:48,265 ERROR: Traceback (most recent call last):
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 577, in fetch
+    response.raise_for_status()
+  File "D:\smc-project\venv\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\smc-project\dryrun\binance_futures_testnet.py", line 189, in send_order
+    order = self.exchange.create_market_order(symbol, side, quantity, params=params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 5475, in create_market_order
+    return self.create_order(symbol, 'market', side, amount, price, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 6016, in create_order
+    response = self.fapiPrivatePostOrder(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\types.py", line 35, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11330, in request
+    response = self.fetch2(path, api, method, params, headers, body, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4397, in fetch2
+    raise e
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4386, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 593, in fetch
+    skip_further_error_handling = self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11298, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], error, feedback)
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4790, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.OperationRejected: binanceusdm {"code":-4061,"msg":"Order's position side does not match user's setting."}
+
+2025-05-05 23:24:48,270 INFO: Ordem de compra enviada: None
+2025-05-05 23:24:48,270 INFO: Analisando DOT/USDT...
+2025-05-05 23:24:51,610 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:24:51,610 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:24:51,610 INFO: Observação preparada para DOT/USDT: shape (10, 12)
+2025-05-05 23:24:55,646 INFO: Decisão para DOT/USDT: VENDER (action=2) | Preço: 3.865000 | Posição atual: 0
+2025-05-05 23:24:56,459 INFO: Parâmetros da ordem: Symbol=DOT/USDT | Ação=2 | Quantidade=25.873000 | Valor=100.00 USDT | Saldo=1940.22 USDT | Risco=2.0%
+2025-05-05 23:24:56,459 INFO: Enviando ordem de VENDA para DOT/USDT - Qtd: 25.873000 - Preço: 3.865000
+2025-05-05 23:24:56,767 ERROR: Erro ao enviar ordem para DOT/USDT: binanceusdm {"code":-4061,"msg":"Order's position side does not match user's setting."}
+2025-05-05 23:24:56,769 ERROR: Traceback (most recent call last):
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 577, in fetch
+    response.raise_for_status()
+  File "D:\smc-project\venv\Lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\smc-project\dryrun\binance_futures_testnet.py", line 189, in send_order
+    order = self.exchange.create_market_order(symbol, side, quantity, params=params)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 5475, in create_market_order
+    return self.create_order(symbol, 'market', side, amount, price, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 6016, in create_order
+    response = self.fapiPrivatePostOrder(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\types.py", line 35, in unbound_method
+    return _self.request(self.path, self.api, self.method, params, config=self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11330, in request
+    response = self.fetch2(path, api, method, params, headers, body, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4397, in fetch2
+    raise e
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4386, in fetch2
+    return self.fetch(request['url'], request['method'], request['headers'], request['body'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 593, in fetch
+    skip_further_error_handling = self.handle_errors(http_status_code, http_status_text, url, method, headers, http_response, json_response, request_headers, request_body)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\binance.py", line 11298, in handle_errors
+    self.throw_exactly_matched_exception(self.exceptions['exact'], error, feedback)
+  File "D:\smc-project\venv\Lib\site-packages\ccxt\base\exchange.py", line 4790, in throw_exactly_matched_exception
+    raise exact[string](message)
+ccxt.base.errors.OperationRejected: binanceusdm {"code":-4061,"msg":"Order's position side does not match user's setting."}
+
+2025-05-05 23:24:56,773 INFO: Ordem de venda enviada: None
+2025-05-05 23:25:00,061 INFO: Métricas registradas: Saldo=1940.22 | Posições abertas: 0
+2025-05-05 23:25:00,061 INFO: Ciclo de verificação completo. Próxima verificação em 3600 segundos
+2025-05-05 23:36:51,301 INFO: Execução interrompida pelo usuário

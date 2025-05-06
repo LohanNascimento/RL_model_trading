@@ -1,0 +1,25 @@
+2025-05-05 23:19:51,056 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:19:53,387 INFO: Timestamp sincronizado. Diferença: 13486ms
+2025-05-05 23:19:54,895 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:19:54,895 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:19:55,190 INFO: Saldo USDT: 1940.22398178
+2025-05-05 23:19:56,611 INFO: Nenhuma posição ativa
+2025-05-05 23:19:56,906 INFO: Timestamp do servidor: 1746498010389
+2025-05-05 23:19:56,906 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:19:56,909 INFO: Nenhuma ordem aberta
+2025-05-05 23:19:56,910 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:19:56,914 INFO: Monitorando os seguintes ativos: ['ETHUSDT', 'BTCUSDT', 'ADAUSDT', 'UNIUSDT', 'DOTUSDT', 'AVAXUSDT', 'DOGEUSDT', 'SOLUSDT', 'LINKUSDT']
+2025-05-05 23:19:59,346 INFO: Timestamp sincronizado. Diferença: 13480ms
+2025-05-05 23:20:01,389 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:20:01,389 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:20:01,389 INFO: Carregando modelo de checkpoints/best_model.zip
+2025-05-05 23:20:03,919 INFO: Modelo carregado com sucesso!
+2025-05-05 23:20:03,930 INFO: Sobrescrevendo símbolos para: ['BTC/USDT']
+2025-05-05 23:20:03,936 INFO: Modo de monitoramento apenas (sem execução de trades)
+2025-05-05 23:20:03,936 INFO: Executando apenas um ciclo
+2025-05-05 23:20:03,958 INFO: Analisando BTC/USDT...
+2025-05-05 23:20:07,828 INFO: Formato esperado pelo modelo: (10, 12)
+2025-05-05 23:20:07,828 INFO: Usando conjunto reduzido de features: 12
+2025-05-05 23:20:07,844 INFO: Observação preparada para BTC/USDT: shape (10, 12)
+2025-05-05 23:20:12,760 INFO: Decisão para BTC/USDT: COMPRAR (action=1) | Preço: 94106.000000 | Posição atual: 0
+2025-05-05 23:20:13,353 INFO: Métricas registradas: Saldo=1940.22 | Posições abertas: 0

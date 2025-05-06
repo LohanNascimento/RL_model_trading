@@ -1,0 +1,7 @@
+{
+  "mode": "backtest",
+  "symbol": "UNIUSDT",
+  "data_file": null,
+  "model_path": "checkpoints/rl_model_10000_steps.zip",
+  "timestamp": "2025-05-05 00:14:04"
+}

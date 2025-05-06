@@ -1,0 +1,28 @@
+# Configuração de Treinamento do Agente
+training:
+  algorithm: PPO     # Algoritmo de RL
+  total_timesteps: 10000  # Número total de passos de treinamento
+  learning_rate: 0.0001  # Taxa de aprendizado
+  n_steps: 64  # Número de passos por atualização
+  gamma: 0.99  # Fator de desconto
+  gae_lambda: 0.95  # Fator de lambda para GAE
+  ent_coef: 0.02    # Coeficiente de entropia
+  vf_coef: 0.5     # Coeficiente da função valor
+  max_grad_norm: 0.5  # Norma máxima do gradiente
+
+# Split de dados
+split:
+  train_size: 0.7  # Porcentagem para treino
+  val_size: 0.2   # Porcentagem para validação
+  test_size: 0.1  # Porcentagem para teste
+
+# Early Stopping
+early_stopping:
+  patience: 5    # Número de épocas sem melhora
+  min_delta: 0.01 # Mínima melhora necessária
+
+# Salvamento de checkpoints
+checkpoint:
+  save_freq: 1000  # Frequência de salvamento
+  save_path: "checkpoints"  # Diretório para checkpoints
+  keep_best: true   # Manter apenas o melhor modelo

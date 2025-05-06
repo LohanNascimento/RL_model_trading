@@ -1,0 +1,134 @@
+{
+  "timestamp": "2025-05-05 22:24:10",
+  "metrics": {
+    "win_rate": 0.7468354430379747,
+    "profit_factor": 5.34548890809631,
+    "avg_win": 10.328848380970916,
+    "avg_loss": -5.700152642298818,
+    "max_drawdown": 0.003991351073586856,
+    "sharpe_ratio": 7.849934227217734,
+    "total_trades": 158,
+    "win_trades": "118",
+    "loss_trades": "40"
+  },
+  "system_health": {
+    "error_count": 0,
+    "warning_count": 0,
+    "avg_execution_time": 0.0
+  },
+  "trades": {
+    "total": 158,
+    "recent_trades": [
+      {
+        "timestamp": "2025-05-05 22:24:09.224082",
+        "step": 28970,
+        "action": 2,
+        "type": "stop_loss_short",
+        "price": 0,
+        "position": 0,
+        "balance": 13415.905808196143,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:09.246192",
+        "step": 28971,
+        "action": 2,
+        "type": "open_short",
+        "price": 5.944,
+        "position": -1,
+        "balance": 13415.905808196143,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:09.277210",
+        "step": 28976,
+        "action": 2,
+        "type": "stop_loss_short",
+        "price": 0,
+        "position": 0,
+        "balance": 13412.22112233361,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:09.298934",
+        "step": 28977,
+        "action": 2,
+        "type": "stop_loss_short",
+        "price": 0,
+        "position": 0,
+        "balance": 13417.580645894095,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:09.323576",
+        "step": 28978,
+        "action": 2,
+        "type": "stop_loss_short",
+        "price": 0,
+        "position": 0,
+        "balance": 13422.942311120194,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:09.346086",
+        "step": 28979,
+        "action": 2,
+        "type": "open_short",
+        "price": 5.956,
+        "position": -1,
+        "balance": 13422.942311120194,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:09.411032",
+        "step": 28998,
+        "action": 2,
+        "type": "take_profit_short",
+        "price": 0,
+        "position": 0,
+        "balance": 13434.666481060136,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:09.436332",
+        "step": 28999,
+        "action": 2,
+        "type": "open_short",
+        "price": 5.736,
+        "position": -1,
+        "balance": 13434.666481060136,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:10.059526",
+        "step": 29253,
+        "action": 2,
+        "type": "take_profit_short",
+        "price": 0,
+        "position": 0,
+        "balance": 13473.759015854055,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      },
+      {
+        "timestamp": "2025-05-05 22:24:10.090648",
+        "step": 29254,
+        "action": 2,
+        "type": "open_short",
+        "price": 5.055,
+        "position": -1,
+        "balance": 13473.759015854055,
+        "profit_loss": 0,
+        "drawdown": -2.0539120502562582
+      }
+    ]
+  }
+}

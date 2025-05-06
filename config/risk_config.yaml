@@ -1,0 +1,14 @@
+# Configuração de Gerenciamento de Risco
+risk_manager:
+  risk_per_trade: 0.02  # 2% do saldo por trade
+  rr_ratio: 2.0        # Risk/Reward ratio
+
+# Configuração para TrendFollowingStrategy
+trend_following:
+  rsi_oversold: 30     # Nível de RSI para entrada
+  rsi_overbought: 70   # Nível de RSI para saída
+
+# Configuração para ReversalStrategy
+reversal:
+  trend_lookback: 50   # Período para análise de tendência
+  volatility_lookback: 20  # Período para análise de volatilidade

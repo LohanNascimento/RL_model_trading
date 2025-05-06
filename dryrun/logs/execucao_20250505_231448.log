@@ -1,0 +1,17 @@
+2025-05-05 23:14:48,103 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:14:51,140 WARNING: Erro ao sincronizar timestamp: unsupported operand type(s) for -: 'str' and 'int'
+2025-05-05 23:14:52,120 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:14:52,151 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:14:52,438 INFO: Saldo USDT: 1941.94988557
+2025-05-05 23:14:53,331 INFO: Posições ativas: {'ETH/USDT:USDT': 1.0, 'UNI/USDT:USDT': 3.0}
+2025-05-05 23:14:53,615 INFO: Timestamp do servidor: 1746497707111
+2025-05-05 23:14:53,615 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:14:53,615 INFO: Nenhuma ordem aberta
+2025-05-05 23:14:53,615 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:14:53,615 ERROR: Erro fatal: ExecutorModelo.__init__() got an unexpected keyword argument 'risk_config'
+2025-05-05 23:14:53,615 ERROR: Traceback (most recent call last):
+  File "D:\smc-project\run_testnet.py", line 235, in main
+    executor = ExecutorModelo(
+               ^^^^^^^^^^^^^^^
+TypeError: ExecutorModelo.__init__() got an unexpected keyword argument 'risk_config'
+

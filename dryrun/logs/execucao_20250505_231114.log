@@ -1,0 +1,19 @@
+2025-05-05 23:11:14,466 INFO: Iniciando sistema de execução na Binance Testnet
+2025-05-05 23:11:15,932 WARNING: Erro ao sincronizar timestamp: unsupported operand type(s) for -: 'str' and 'int'
+2025-05-05 23:11:17,433 INFO: Já está em modo Hedge Mode.
+2025-05-05 23:11:17,433 INFO: Binance Futures Testnet (CCXT) inicializado em modo sandbox.
+2025-05-05 23:11:17,731 INFO: Saldo USDT: 1941.89501144
+2025-05-05 23:11:18,374 INFO: Posições ativas: {'ETH/USDT:USDT': 1.0, 'UNI/USDT:USDT': 3.0, 'BTC/USDT:USDT': 0.002}
+2025-05-05 23:11:18,669 INFO: Timestamp do servidor: 1746497492147
+2025-05-05 23:11:18,669 ERROR: Erro ao consultar ordens abertas: binanceusdm fetchOpenOrders() WARNING: fetching open orders without specifying a symbol has stricter rate limits(10 times more for spot, 40 times more for other markets) compared to requesting with symbol argument. To acknowledge self warning, set binanceusdm.options["warnOnFetchOpenOrdersWithoutSymbol"] = False to suppress self warning message.
+2025-05-05 23:11:18,674 INFO: Nenhuma ordem aberta
+2025-05-05 23:11:18,674 INFO: Conexão com Binance Testnet OK!
+2025-05-05 23:11:21,228 INFO: === RESUMO DA CONTA ===
+2025-05-05 23:11:21,228 INFO: Saldo USDT: 1941.90
+2025-05-05 23:11:21,229 INFO: Exposição: 2005.74 (103.29%)
+2025-05-05 23:11:21,229 INFO: Posições ativas: 3
+2025-05-05 23:11:21,229 INFO: 
+=== DETALHES POR SÍMBOLO ===
+2025-05-05 23:11:21,820 INFO: BTC/USDT: Preço=94223.100000 | Posição=0 (NEUTRO) | Valor=0.00 USDT
+2025-05-05 23:11:22,405 INFO: ETH/USDT: Preço=1801.880000 | Posição=0 (NEUTRO) | Valor=0.00 USDT
+2025-05-05 23:11:23,543 INFO: DOT/USDT: Preço=3.917000 | Posição=0 (NEUTRO) | Valor=0.00 USDT
